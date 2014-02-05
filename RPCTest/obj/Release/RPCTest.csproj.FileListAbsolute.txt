@@ -1,0 +1,10 @@
+E:\Principal\RPCTest\RPCTest\bin\RPCTest.dll
+E:\Principal\RPCTest\RPCTest\bin\RPCTest.pdb
+E:\Principal\RPCTest\RPCTest\bin\AustinHarris.JsonRpc.AspNet.dll
+E:\Principal\RPCTest\RPCTest\bin\AustinHarris.JsonRpc.dll
+E:\Principal\RPCTest\RPCTest\bin\Newtonsoft.Json.dll
+E:\Principal\RPCTest\RPCTest\bin\AustinHarris.JsonRpc.pdb
+E:\Principal\RPCTest\RPCTest\bin\Newtonsoft.Json.xml
+E:\Principal\RPCTest\RPCTest\obj\Release\RPCTest.csprojResolveAssemblyReference.cache
+E:\Principal\RPCTest\RPCTest\obj\Release\RPCTest.dll
+E:\Principal\RPCTest\RPCTest\obj\Release\RPCTest.pdb

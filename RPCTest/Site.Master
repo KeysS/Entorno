@@ -1,0 +1,392 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="RPCTest.SiteMaster" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
+
+		<title> Titulo por Ahora </title>
+    <!-- Seccion de Metas -->
+		<meta name="description" content="Descripcion de la Web a mostrar en los buscadores" />
+		<meta name="author" content="Equipo de Trabajo" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <!-- Estilo Basico del Diseño -->
+		<link rel="stylesheet" type="text/css" media="screen" href="~/Content/css/bootstrap.min.css"/>
+    <!-- Estilo de los iconos de la seccion de enlaces -->
+		<link rel="stylesheet" type="text/css" media="screen" href="~/Content/css/font-awesome.min.css"/>
+
+		<!-- SmartAdmin Styles : Please note (smartadmin-production.css) was created using LESS variables -->
+		<link rel="stylesheet" type="text/css" media="screen" href="~/Content/css/smartadmin-production.css"/>
+		<link rel="stylesheet" type="text/css" media="screen" href="~/Content/css/smartadmin-skins.css"/>
+        <link href="~/Content/css/lockscreen.css" media="screen" rel="stylesheet" />
+
+		<!-- Demo purpose only: goes with demo.js, you can delete this css when designing your own WebApp -->
+		<link rel="stylesheet" type="text/css" media="screen" href="~/Content/css/demo.css"/>
+
+    <!-- Iconos de la url -->
+		<link rel="shortcut icon" href="~/Content/img/favicon/favicon.ico" type="image/x-icon" />
+		<link rel="icon" href="~/Content/img/favicon/favicon.ico" type="image/x-icon" />
+
+    <!-- Estilo de fuente obtenida desde Google -->
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700" />
+
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+
+    <!-- Cabecera de la WebSite -->
+		<header id="header">
+			<div id="logo-group">
+
+				<!-- LOGO -->
+				<span id="logo"> <img src="Content/img/logo.png" alt="teleavance"/> </span>
+				<!-- END LOGO -->
+
+				<!-- Note: The activity badge color changes when clicked and resets the number to 0
+				Suggestion: You may want to set a flag when this happens to tick off all checked messages / notifications -->
+				<span id="activity" class="activity-dropdown"> <i class="fa fa-user"></i> <b class="badge"> 2 </b> </span>
+
+				<!-- AJAX-DROPDOWN : control this dropdown height, look and feel from the LESS variable file -->
+				<div class="ajax-dropdown">
+
+					<!-- the ID links are fetched via AJAX to the ajax container "ajax-notifications" -->
+					<div class="btn-group btn-group-justified" data-toggle="buttons" >
+						<label class="btn btn-default">
+							<input type="radio" name="activity" id="ajax/notify/mail.html" />
+							Msjs (14) </label>
+						<label class="btn btn-default">
+							<input type="radio" name="activity" id="ajax/notify/notifications.html" />
+							notify (3) </label>
+						<label class="btn btn-default">
+							<input type="radio" name="activity" id="ajax/notify/tasks.html" />
+							Tasks (4) </label>
+					</div>
+
+					<!-- Seccion de Notificaciones en el Header el Muñequito -->
+					<div class="ajax-notifications custom-scroll">
+
+						<div class="alert alert-transparent">
+							<h4>Click a button to show messages here</h4>
+							This blank page message helps protect your privacy, or you can show the first message here automatically.
+						</div>
+
+						<i class="fa fa-lock fa-4x fa-border"></i>
+
+					</div>
+					<!-- Fin de Notificacion -->
+
+					<!-- footer: refresh area -->
+					<span> Last updated on: 12/12/2013 9:43AM
+						<button type="button" data-loading-text="<i class='fa fa-refresh fa-spin'></i> Loading..." class="btn btn-xs btn-default pull-right">
+							<i class="fa fa-refresh"></i>
+						</button> </span>
+					<!-- end footer -->
+
+				</div>
+				<!-- END AJAX-DROPDOWN -->
+			</div>
+
+			<!-- Cuadro Desplegable de Proyectos -->
+			<div id="project-context">
+
+				<span class="label">Proyectos:</span>
+				<span id="project-selector" class="popover-trigger-element dropdown-toggle" data-toggle="dropdown">Proyectos Recientes <i class="fa fa-angle-down"></i></span>
+
+				<!-- Menu Desplegable usando javascript para enlaces -->
+				<ul class="dropdown-menu">
+					<li>
+						<a href="javascript:void(0);">Texto para JavaScript 1</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);">Texto para JavaScript 2</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);">Texto para JavaScript 3</a>
+					</li>
+                    <!-- Division con 1 stilo -->
+					<li class="divider"></li>
+                    <!-- Division con 1 stilo -->
+					<li>
+						<a href="javascript:void(0);"><i class="fa fa-power-off"></i> Clear</a>
+					</li>
+				</ul>
+				<!-- Fin Menu Desplegable-->
+
+			</div>
+			<!-- Fin Cuadro Desplegable de Proyectos -->
+
+			<!-- pulled right: nav area -->
+			<div class="pull-right">
+
+				<!-- Boton en el Header para Ocultar el menu -->
+				<div id="hide-menu" class="btn-header pull-right">
+					<span> <a href="javascript:void(0);" title="Ocultar Menu"><i class="fa fa-reorder"></i></a> </span>
+				</div>
+				<!-- FIn del Boton en el Header para esconer el menu -->
+
+				<!-- Boton de Cerrar Sesion -->
+				<div id="logout" class="btn-header transparent pull-right">
+					<span> <a href="login.aspx" title="Cerrar Sesion"><i class="fa fa-sign-out"></i></a> </span>
+				</div>
+				<!-- Fin logout button -->
+
+				<!-- search mobile button (this is hidden till mobile view port) -->
+				<div id="search-mobile" class="btn-header transparent pull-right">
+					<span> <a href="javascript:void(0)" title="Search"><i class="fa fa-search"></i></a> </span>
+				</div>
+				<!-- end search mobile button -->
+
+				<!-- input: search field -->
+				<form action="#ajax/search.html" class="header-search pull-right">
+					<input type="text" placeholder="Encuentra Rerportes y mas" id="search-fld"/>
+					<button type="submit">
+						<i class="fa fa-search"></i>
+					</button>
+					<a href="javascript:void(0);" id="cancel-search-js" title="Cancel Search"><i class="fa fa-times"></i></a>
+				</form>
+				<!-- end input: search field -->
+
+				<!-- multiple lang dropdown : find all flags in the image folder  LENGUAJE -->
+				<ul class="header-dropdown-list hidden-xs">
+					<li>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="Content/img/flags/es.png" /> <span> ES </span> <i class="fa fa-angle-down"></i> </a>
+						<ul class="dropdown-menu pull-right">
+							<li class="active">
+								<a href="javascript:void(0);"><img alt="" src="Content/img/flags/es.png"/> Español</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);"><img alt="" src="Content/img/flags/us.png"/> Ingles</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);"><img alt="" src="Content/img/flags/de.png"/> German</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<!-- end multiple lang -->
+
+			</div>
+			<!-- end pulled right: nav area -->
+
+		</header>
+		<!-- Fin de la CABECERA -->
+
+
+    <!-- Panel Izquierdo : Area de Navegacion -->
+		<!-- Note: This width of the aside area can be adjusted through LESS variables -->
+		<aside id="left-panel">
+
+			<!-- Informacion de Usuario -->
+			<div class="login-info">
+				<span> <!-- La imagen del usuario es ajustada dentro del CSS --> 
+                    <img src="Content/img/avatars/sunny.png" /> 
+					<a href="javascript:void(0);" id="show-shortcut">
+						%USUARIO% <i class="fa fa-angle-down"></i>
+					</a> 
+				</span>
+			</div>
+			<!-- Fin de la informaicon del Usuario -->
+
+
+            <!-- NAVIGATION : La navegacion tb es responsive
+            Para hacer la navegación dinamica, por favor asegúrese de vincular 
+            el nodo (la referencia a la nav> ul) después de cargar la página. 
+            O la navegación no se inicializará.
+			-->
+			<nav>
+				<!-- NOTE: Notice the gaps after each icon usage <i></i>..
+				Please note that these links work a bit different than
+				traditional href="" links. See documentation for details.
+				-->
+
+				<ul>
+					<li>
+                        <!-- Descomponiendo esta weada -->
+                        <!-- Link - Titulo - "Icono segun Fonts Awesome" - tipo de item (menu padre) - Nombre del Menu en la seccion de enlaces -->
+						<a href="paginas/Dashboard.html" title="Titulo sobrepuesto"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">Dashboard</span></a>
+					</li>
+					<li>
+						<a href="Login.aspx"><i class="fa fa-lg fa-fw fa-inbox"></i> <span class="menu-item-parent">Inbox</span><span class="badge pull-right inbox-badge">Stilo</span></a>
+					</li>
+                   	<li>
+						<a href="paginas/intento.aspx"><i class="fa fa-lg fa-fw fa-inbox"></i> <span class="menu-item-parent">Enlace 2</span><span class="badge bg-color-greenLight pull-right inbox-badge">Stilo</span></a>
+					</li>
+                    <li>
+						<a href="#"><i class="fa fa-lg fa-fw fa-inbox"><em>3</em></i> <span class="menu-item-parent">Enlace 3</span><b class="collapse-sign"><em class="fa fa-expand-o"></em></b></a>
+                        <ul>
+							<li>
+								<a href="ajax/flot.html">SubEnlace1</a>
+							</li>
+							<li>
+								<a href="ajax/inline-charts.html">SubEnlace2</a>
+							</li>
+						</ul>
+					</li>
+
+				</ul>
+			</nav>
+            <!-- Flecha para ocultar el menu -->
+			<span class="minifyme"> <i class="fa fa-arrow-circle-left hit"></i> </span>
+
+		</aside>
+		<!-- END NAVIGATION -->
+
+    <!-- Seccion del Main Panel -->
+		<div id="main" role="main">
+
+			<!-- Seccion de la linea que esta sobre el Cotenedor central, esa que es como 1 liston-->
+			<div id="ribbon">
+
+				<span class="ribbon-button-alignment"> <span id="refresh" class="btn btn-ribbon" data-title="refresh"  rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> Advertencia! Esto reseteara la configuracion de tus widgets." data-html="true"><i class="fa fa-refresh"></i></span> </span>
+
+				<!-- Parte del breadcrumb el que autogenera los subtitulos en el liston, esta dentro del app.js-->
+				<ol class="breadcrumb">
+					<!-- Codito autogenerado por el app.js del breadcrumb -->
+				</ol>
+				<!-- Fin breadcrumb -->
+
+				<!-- Se puede agregar mas botones al liston para mejorar la usabilidad
+
+				Ejemplos mas que nada de estilos y bootones:
+
+				<span class="ribbon-button-alignment pull-right">
+				<span id="search" class="btn btn-ribbon hidden-xs" data-title="search"><i class="fa-grid"></i> Change Grid</span>
+				<span id="add" class="btn btn-ribbon hidden-xs" data-title="add"><i class="fa-plus"></i> Add</span>
+				<span id="search" class="btn btn-ribbon" data-title="search"><i class="fa-search"></i> <span class="hidden-mobile">Search</span></span>
+				</span> -->
+			</div>
+			<!-- Fin de la seccion del liston sobre el Main -->
+
+			<!-- Contenido Cetral de la Website -->
+			<div id="content">
+                <!-- codigo .net-->
+                <div class="main">
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+                </div>
+                <!-- end codigo .net -->
+			</div>
+			<!-- Fin del contenido central -->
+
+		</div>
+		<!-- Fin del Panel Central (Incluye el liston de titulos y contenido) -->
+
+        <!-- SHORTCUT AREA : With large tiles (activated via clicking user name tag)
+		Note: These tiles are completely responsive,
+		you can add as many as you like
+		-->
+		<div id="shortcut">
+			<ul>
+				<li>
+					<a href="#ajax/inbox.html" class="jarvismetro-tile big-cubes bg-color-blue"> <span class="iconbox"> <i class="fa fa-envelope fa-4x"></i> <span>Mail <span class="label pull-right bg-color-darken">14</span></span> </span> </a>
+				</li>
+				<li>
+					<a href="#ajax/calendar.html" class="jarvismetro-tile big-cubes bg-color-orangeDark"> <span class="iconbox"> <i class="fa fa-calendar fa-4x"></i> <span>Calendar</span> </span> </a>
+				</li>
+				<li>
+					<a href="#ajax/gmap-xml.html" class="jarvismetro-tile big-cubes bg-color-purple"> <span class="iconbox"> <i class="fa fa-map-marker fa-4x"></i> <span>Maps</span> </span> </a>
+				</li>
+				<li>
+					<a href="#ajax/invoice.html" class="jarvismetro-tile big-cubes bg-color-blueDark"> <span class="iconbox"> <i class="fa fa-book fa-4x"></i> <span>Invoice <span class="label pull-right bg-color-darken">99</span></span> </span> </a>
+				</li>
+				<li>
+					<a href="#ajax/gallery.html" class="jarvismetro-tile big-cubes bg-color-greenLight"> <span class="iconbox"> <i class="fa fa-picture-o fa-4x"></i> <span>Gallery </span> </span> </a>
+				</li>
+				<li>
+					<a href="javascript:void(0);" class="jarvismetro-tile big-cubes selected bg-color-pinkDark"> <span class="iconbox"> <i class="fa fa-user fa-4x"></i> <span>My Profile </span> </span> </a>
+				</li>
+			</ul>
+		</div>
+		<!-- END SHORTCUT AREA -->
+        <!--================================================== -->
+
+		<!-- PACE LOADER - turn this on if you want ajax loading to show (caution: uses lots of memory on iDevices)
+		<script data-pace-options='{ "restartOnRequestAfter": true }' src="js/plugin/pace/pace.min.js"></script>-->
+
+		<!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
+		<script>
+		    if (!window.jQuery) {
+		        document.write('<script src="Scripts/libs/jquery-2.0.2.min.js"><\/script>');
+		    }
+		</script>
+
+		<script>
+		    if (!window.jQuery.ui) {
+		        document.write('<script src="Scripts/libs/jquery-ui-1.10.3.min.js"><\/script>');
+		    }
+		</script>
+
+		<!-- JS TOUCH : include this plugin for mobile drag / drop touch events
+		<script src="js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script> -->
+
+		<!-- BOOTSTRAP JS -->
+        <script src="Scripts/bootstrap/bootstrap.min.js"></script>
+
+		<!-- CUSTOM NOTIFICATION -->
+        <script src="Scripts/notification/SmartNotification.min.js"></script>
+
+		<!-- JARVIS WIDGETS -->
+        <script src="Scripts/smartwidgets/jarvis.widget.min.js"></script>
+
+		<!-- EASY PIE CHARTS -->
+        <script src="Scripts/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
+
+		<!-- SPARKLINES -->
+        <script src="Scripts/plugin/sparkline/jquery.sparkline.min.js"></script>
+
+		<!-- JQUERY VALIDATE -->
+        <script src="Scripts/plugin/jquery-validate/jquery.validate.min.js"></script>
+
+		<!-- JQUERY MASKED INPUT -->
+        <script src="Scripts/plugin/masked-input/jquery.maskedinput.min.js"></script>
+
+		<!-- JQUERY SELECT2 INPUT -->
+        <script src="Scripts/plugin/select2/select2.min.js"></script>
+
+		<!-- JQUERY UI + Bootstrap Slider -->
+        <script src="Scripts/plugin/bootstrap-slider/bootstrap-slider.min.js"></script>
+
+		<!-- browser msie issue fix -->
+        <script src="Scripts/plugin/msie-fix/jquery.mb.browser.min.js"></script>
+
+		<!-- SmartClick: For mobile devices -->
+        <script src="Scripts/plugin/smartclick/smartclick.js"></script>
+
+		<!--[if IE 7]>
+
+		<h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
+
+		<![endif]-->
+
+		<!-- Demo purpose only -->
+        <script src="Scripts/demo.js"></script>
+
+		<!-- MAIN APP JS FILE -->
+        <script src="Scripts/app.js"></script>
+
+		<!-- Your GOOGLE ANALYTICS CODE Below -->
+		<script type="text/javascript">
+
+		    var _gaq = _gaq || [];
+		    _gaq.push(['_setAccount', 'UA-43548732-3']);
+		    _gaq.push(['_trackPageview']);
+
+		    (function () {
+		        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		    })();
+
+		</script>
+
+            <!-- projects dropdown --> 
+  	
+
+    <%--  editar1--%>
+                        
+                <%--  /editar1--%>
+</body>
+</html>

@@ -1,0 +1,29 @@
+C:\Users\Jose\Documents\GitHub\ProyectoIndicadores\RPCTest\RPCTest\bin\RPCTest.dll
+C:\Users\Jose\Documents\GitHub\ProyectoIndicadores\RPCTest\RPCTest\bin\RPCTest.pdb
+C:\Users\Jose\Documents\GitHub\ProyectoIndicadores\RPCTest\RPCTest\bin\AustinHarris.JsonRpc.AspNet.dll
+C:\Users\Jose\Documents\GitHub\ProyectoIndicadores\RPCTest\RPCTest\bin\AustinHarris.JsonRpc.dll
+C:\Users\Jose\Documents\GitHub\ProyectoIndicadores\RPCTest\RPCTest\bin\Newtonsoft.Json.dll
+C:\Users\Jose\Documents\GitHub\ProyectoIndicadores\RPCTest\RPCTest\bin\Newtonsoft.Json.xml
+C:\Users\Jose\Documents\GitHub\ProyectoIndicadores\RPCTest\RPCTest\obj\Debug\RPCTest.csprojResolveAssemblyReference.cache
+C:\Users\Jose\Documents\GitHub\ProyectoIndicadores\RPCTest\RPCTest\obj\Debug\RPCTest.dll
+C:\Users\Jose\Documents\GitHub\ProyectoIndicadores\RPCTest\RPCTest\obj\Debug\RPCTest.pdb
+C:\Users\jalpiste\Documents\Visual Studio 2012\Projects\ProyectoIndicadores\RPCTest\RPCTest\bin\RPCTest.dll
+C:\Users\jalpiste\Documents\Visual Studio 2012\Projects\ProyectoIndicadores\RPCTest\RPCTest\bin\RPCTest.pdb
+C:\Users\jalpiste\Documents\Visual Studio 2012\Projects\ProyectoIndicadores\RPCTest\RPCTest\bin\AustinHarris.JsonRpc.AspNet.dll
+C:\Users\jalpiste\Documents\Visual Studio 2012\Projects\ProyectoIndicadores\RPCTest\RPCTest\bin\AustinHarris.JsonRpc.dll
+C:\Users\jalpiste\Documents\Visual Studio 2012\Projects\ProyectoIndicadores\RPCTest\RPCTest\bin\Newtonsoft.Json.dll
+C:\Users\jalpiste\Documents\Visual Studio 2012\Projects\ProyectoIndicadores\RPCTest\RPCTest\bin\AustinHarris.JsonRpc.pdb
+C:\Users\jalpiste\Documents\Visual Studio 2012\Projects\ProyectoIndicadores\RPCTest\RPCTest\bin\Newtonsoft.Json.xml
+C:\Users\jalpiste\Documents\Visual Studio 2012\Projects\ProyectoIndicadores\RPCTest\RPCTest\obj\Debug\RPCTest.csprojResolveAssemblyReference.cache
+C:\Users\jalpiste\Documents\Visual Studio 2012\Projects\ProyectoIndicadores\RPCTest\RPCTest\obj\Debug\RPCTest.dll
+C:\Users\jalpiste\Documents\Visual Studio 2012\Projects\ProyectoIndicadores\RPCTest\RPCTest\obj\Debug\RPCTest.pdb
+E:\Principal\RPCTest\RPCTest\bin\RPCTest.dll
+E:\Principal\RPCTest\RPCTest\bin\RPCTest.pdb
+E:\Principal\RPCTest\RPCTest\bin\AustinHarris.JsonRpc.AspNet.dll
+E:\Principal\RPCTest\RPCTest\bin\AustinHarris.JsonRpc.dll
+E:\Principal\RPCTest\RPCTest\bin\Newtonsoft.Json.dll
+E:\Principal\RPCTest\RPCTest\bin\AustinHarris.JsonRpc.pdb
+E:\Principal\RPCTest\RPCTest\bin\Newtonsoft.Json.xml
+E:\Principal\RPCTest\RPCTest\obj\Debug\RPCTest.csprojResolveAssemblyReference.cache
+E:\Principal\RPCTest\RPCTest\obj\Debug\RPCTest.dll
+E:\Principal\RPCTest\RPCTest\obj\Debug\RPCTest.pdb
